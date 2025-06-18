@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portfólio</title>
+
+    <!-- Link para os ícones do Google -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+    <!-- Seu CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='favicon-32x32.png') }}" type="image/x-icon" />
+
+    <!-- Swiper CSS -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+    />
+</head>
+
+<body>
+<!-- Navegação -->
+<nav class="navbar">
+    <div class="container nav-content">
+        <div class="logo">CSP</div>
+
+        <!-- Botão do menu hamburguer animado -->
+        <div class="menu-toggle" id="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <ul class="nav-links" id="nav-links">
+            <li><a href="#home" class="nav-link">Início</a></li>
+            <li><a href="#about" class="nav-link">Sobre</a></li>
+            <li><a href="#skills" class="nav-link">Habilidades</a></li>
+            <li><a href="#projects" class="nav-link">Projetos</a></li>
+            <li><a href="#contact" class="nav-link">Contato</a></li>
+            <button id="theme-toggle">☀️ Modo Escuro</button>
+
+
+
+        </ul>
+    </div>
+</nav>
+
+
+
+    <!-- Botão de tema -->
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <i class="fas fa-moon"></i>
+    </button>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Caio de Santana Pereira</h1>
+                <p class="hero-subtitle">Desenvolvedor</p>
+                <p class="hero-description">
+                    Transformando ideias em soluções digitais inovadoras através de código limpo e design intuitivo
+                </p>
+                <div class="cta-buttons">
+                    <a href="#about" class="btn btn-primary">
+                        <i class="fas fa-user"></i>
+                        Conheça-me
+                    </a>
+                    <a href="#projects" class="btn btn-secondary">
+                        <i class="fas fa-code"></i>
+                        Meus Projetos
+                    </a>
+                    <a href="#contact" class="btn btn-secondary">
+                        <i class="fas fa-envelope"></i>
+                        Entre em Contato
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Sobre -->
+    <section id="about" class="about section reveal">
+        <div class="container">
+            <div class="about-content">
+                <div class="profile-section">
+                    <div class="profile-image">
+                          <img src="{{ url_for('static', filename='imagens/123.jpg') }}" alt="Foto de perfil" />
+                    </div>
+                </div>
+                <div class="about-text">
+                    <h2>Sobre Mim</h2>
+                    <p>
+                        Sou estudante de Sistemas de Informação na UniLaSalle, atualmente no 5º período, 
+                        com paixão por tecnologia e desenvolvimento de soluções inovadoras. 
+                        Minha jornada na programação começou com curiosidade e evoluiu para uma dedicação profissional.
+                    </p>
+                    <p>
+                        Tenho experiência prática em desenvolvimento web, bancos de dados, análise de dados 
+                        e diversas linguagens de programação. Meu foco principal está em Python e SQL, 
+                        tecnologias nas quais busco constantemente aprimoramento e excelência.
+                    </p>
+                    <p>
+                        Sou um profissional proativo, comunicativo e sempre em busca de novos desafios 
+                        que me permitam crescer e contribuir significativamente para os projetos em que me envolvo.
+                    </p>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number">5º</span>
+                            <span class="stat-label">Período SI</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">3+</span>
+                            <span class="stat-label">Anos de Estudo</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Tecnologias</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">∞</span>
+                            <span class="stat-label">Motivação</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Aqui tu pode alterar pra suas habilidades, só fica ligado q esses http é o icone da parada-->
+    <!-- Habilidades -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Habilidades</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6" />
+                            <polyline points="8 6 2 12 8 18" />
+                        </svg>
+                    </div>
+                    <h3>Desenvolvimento Web</h3>
+                    <p>HTML, CSS, JavaScript</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 8V4H8" />
+                            <rect width="16" height="12" x="4" y="8" rx="2" />
+                            <path d="M2 14h2" />
+                            <path d="M20 14h2" />
+                            <path d="M15 13v2" />
+                            <path d="M9 13v2" />
+                        </svg>
+                    </div>
+                    <h3>Linguagens</h3>
+                    <p>C, Python, Java</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect width="20" height="8" x="2" y="2" rx="2" ry="2" />
+                            <rect width="20" height="8" x="2" y="14" rx="2" ry="2" />
+                            <line x1="6" y1="6" x2="6.01" y2="6" />
+                            <line x1="6" y1="18" x2="6.01" y2="18" />
+                        </svg>
+                    </div>
+                    <h3>Arquitetura de Redes</h3>
+                    <p>Infraestrutura e Conectividade</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <ellipse cx="12" cy="5" rx="9" ry="3" />
+                            <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3" />
+                            <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5" />
+                        </svg>
+                    </div>
+                    <h3>Dados</h3>
+                    <p>Excel, SQL, Power BI</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section id="projects" class="projects">
+  <div class="container">
+    <h2>Principais Projetos</h2>
+
+    <!-- Swiper -->
+    <div class="swiper">
+      <div class="swiper-wrapper">
+
+        <!-- Projeto 1 -->
+        
+        <div class="swiper-slide project-card">
+          <div class="project-image">
+            <video width="100%" controls>
+              <source src="{{ url_for('static', filename='imagens/projeto1.mp4') }}" type="video/mp4">
+              Seu navegador não suporta vídeos.
+            </video>
+          </div>
+          <div class="project-content">
+            <h3>Sistema - Eloaj</h3>
+            <p>Desenvolvi este sistema para atender a uma demanda real de uma empresa de administração judicial...</p>
+            <div class="project-links">
+              <a href="https://github.com/CAIO-SANTANA3127/Projeto-usando-Tkinter-PYTHON" class="project-link">Código</a>
+              <a href="#" class="project-link">Demo</a>
+            </div>
+          </div>
+        </div>
+ 
+       <div class="swiper-slide project-card">
+            <div class="project-image">
+                <img src="{{ url_for('static', filename='imagens/Consolidador.png') }}" alt="foto do projeto" width="100%" />
+            </div>
+            <div class="project-content">
+                <h3>Sistema - Consolidador de Arquivos Excel</h3>
+                <p>Sistema desenvolvido para facilitar rotinas e demandas de relatórios, permitindo ao usuário possa consolidar e unificar dados de planilhas distintas de forma prática e eficiente.</p>
+                <div class="project-links">
+                <a href="https://github.com/CAIO-SANTANA3127/Projeto-usando-Tkinter-PYTHON" class="project-link">Código</a>
+                <a href="#" class="project-link">Demo</a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Projeto 3 -->
+        <div class="swiper-slide project-card">
+          <div class="project-image">
+            <video width="100%" controls>
+              <source src="{{ url_for('static', filename='imagens/tk.mp4') }}" type="video/mp4">
+              Seu navegador não suporta vídeos.
+            </video>
+          </div>
+          <div class="project-content">
+            <h3>Sistema de conexão com Banco de dados</h3>
+            <p>Desenvolvi um sistema para aplicar meus estudos...</p>
+            <div class="project-links">
+              <a href="https://github.com/CAIO-SANTANA3127/Projeto-usando-Tkinter-PYTHON" class="project-link">Código</a>
+              <a href="#" class="project-link">Demo</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Projeto 4 -->
+        <div class="swiper-slide project-card">
+          <div class="project-image">
+            <video width="100%" controls>
+              <source src="{{ url_for('static', filename='imagens/Ong.mp4') }}" type="video/mp4">
+              Seu navegador não suporta vídeos.
+            </video>
+          </div>
+          <div class="project-content">
+            <h3>Projeto ONG</h3>
+            <p>Site desenvolvido com Django com o intuito de atender a demanda e fazer o gerenciamento de padrinhos e doadores de uma ONG.</p>
+            <div class="project-links">
+              <a href="https://github.com/CAIO-SANTANA3127/Projeto-DJANGO-SITE-ONG-OZANIMAIS" class="project-link">Código</a>
+              <a href="#" class="project-link">Demo</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Botões de navegação -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+
+      <!-- Paginação -->
+      <div class="swiper-pagination"></div>
+    </div>
+  </div>
+</section>
+
+
+
+    <!-- Certificados -->
+    <section id="certificates" class="certificates">
+        <div class="container">
+            <h2>Certificados</h2>
+            <div class="carousel-container">
+                <button class="prev" onclick="prevSlide()">&#10094;</button>
+                <div class="carousel">
+                    <img src="{{ url_for('static', filename='imagens/certifcado-SQL(UDEMY)_page-0001.jpg') }}" class="certificate" alt="Certificado 1">
+                    <img src="{{ url_for('static', filename='imagens/Imersão power Bi _page-0001.jpg') }}" class="certificate" alt="Certificado 2">
+                    
+                </div>
+                <button class="next" onclick="nextSlide()">&#10095;</button>
+            </div>
+        </div>
+    </section>
+    <!-- Contato -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contato</h2>
+            <div class="social-links">
+                <a href="https://github.com/CAIO-SANTANA3127" class="social-link">   <!-- Github -->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+                        <path d="M9 18c-4.51 2-5-2-7-2" />
+                    </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/caiodesantana" class="social-link">   <!-- Só colar seu link aqui do linkedin-->
+                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                        <rect width="4" height="12" x="2" y="9" />
+                        <circle cx="4" cy="4" r="2" />
+                    </svg>
+                </a>
+            </div>
+            <form id="contact-form" class="contact-form" method="POST" action="/enviar">
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Seu email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="nome" name="nome" placeholder="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" name="mensagem" placeholder="Sua mensagem" rows="4" required></textarea>
+                    </div>
+                    <button type="submit" class="btn primary">Enviar Mensagem</button>
+
+                    {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <div class="flash-messages">
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">{{ message }}</div>
+                        {% endfor %}
+                        </div>
+                    {% endif %}
+                    {% endwith %}
+</form>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p class="quote">"Transformando ideias em realidade através do código"</p>
+        <p class="copyright">© 2025 Caio Santana Pereira. Todos os direitos reservados.</p>
+    </footer>
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
